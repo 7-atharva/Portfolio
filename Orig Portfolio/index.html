@@ -4,15 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
-    <!-- box icones -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Initial hidden state for the navbar on small screens */
+.navbar {
+    display: none;
+    flex-direction: column;
+}
+
+/* Show the navbar when it has the 'active' class */
+.navbar.active {
+    display: flex;
+}
+
+/* Display the menu icon on small screens */
+#menu-icon {
+    display: block;
+    cursor: pointer;
+}
+
+/* Hide the menu icon and show the navbar on larger screens */
+@media (min-width: 768px) {
+    #menu-icon {
+        display: none;
+    }
+
+    .navbar {
+        display: flex;
+        flex-direction: row;
+    }
+}
+
+    </style>
 </head>
 <body>
     <header class="header">
         <a href="#" class="logo">Portfolio</a>
-
         <i class='bx bx-menu' id="menu-icon"></i>
         <nav class="navbar">
             <a href="#home">Home</a>
@@ -22,17 +51,16 @@
             <a href="#contact">Contact</a>
         </nav>
     </header>
-
     <!-- home section design -->
     <section class="home" id="home">
         <div class="home-content">
             <h3>Hello, It's Me</h3>
             <h1>Atharva Kewate</h1>
-            <h3>And I'm a <span><div class="multiple-text"></div></span></h3>
-            <p>a software developer. I love building cool stuff with computers! From websites to apps, I enjoy making things that work well and look good. I'm always learning new things to stay on top of the latest tech trends.</p>
+            <h3>And I'm a <span>Software Developer</span> <span class="multiple-text"></span></h3>
+            <p>I love building cool stuff with computers! From websites to apps, I enjoy making things that work well and look good. I'm always learning new things to stay on top of the latest tech trends.</p>
             <div class="social-media">
                 <a href="https://github.com/7-atharva"><i class='bx bxl-github'></i></a>
-                <a href="#"><i class='bx bxl-twitter'></i></a>
+                <a href="https://x.com/AtharvaKewate?t=bYoi75MmiVRKMv9bNcbJAw&s=09"><i class='bx bxl-twitter'></i></a>
                 <a href="https://www.instagram.com/invites/contact/?i=2ajnh6a97em5&utm_content=iex2hxe"><i class='bx bxl-instagram'></i></a>
                 <a href="https://www.linkedin.com/in/atharva-kewate-80b616245/"><i class='bx bxl-linkedin'></i></a>
             </div>
@@ -40,7 +68,7 @@
             https://online.publuu.com/483076/1085354" class="btn">Download CV</a>
         </div>
         <div class="home-img">
-            <img src="imgaes/Atharvaimg.jpeg" alt="100">
+            <img src="imgaes/atharva.jpeg" alt="100">
             
         </div>
     </section>
@@ -48,7 +76,7 @@
     <!-- about section design -->
      <section class="about" id="about">
         <div class="about-img">
-            <img src="imgaes/Atharvaimg.jpeg" alt="100">
+            <img src="imgaes/atharva.jpeg" alt="100">
         </div>
         
         <div class="about-content">
@@ -184,12 +212,21 @@
             <a href="#home"><i class='bx bx-up-arrow-alt'></i></a>
         </div>    
     </footer>    
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const menuIcon = document.getElementById('menu-icon');
+    const navbar = document.querySelector('.navbar');
 
+    menuIcon.addEventListener('click', function () {
+        navbar.classList.toggle('active');
+    });
+});
+</script>
     <!-- scroll reveal -->
     <script src="https://unpkg.com/scrollreveal"></script>
 
     <!-- typed js -->
-    <script src="https://unpkg.com/typed.js@2.0.15/dist/typed.umd.js"></script>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <!-- custom js -->
     <script src="js/script.js"></script>
 
